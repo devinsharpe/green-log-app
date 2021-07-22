@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  @apply bg-gray-900;
+}
+
+.input {
+  @apply form-input;
+  @apply bg-transparent;
+  @apply rounded;
+  @apply font-serif;
+  @apply focus:ring-0 focus:border-black dark:focus:border-white;
+}
+
+.btn-primary {
+  @apply p-2;
+  @apply bg-gray-800 dark:bg-gray-100;
+  @apply hover:bg-black dark:hover:bg-white;
+  @apply text-white dark:text-black;
+  @apply shadow-sm rounded;
+  @apply flex justify-center;
+}
+
+.focus-fieldset {
+  @apply space-y-1;
+  @apply text-gray-400 dark:text-gray-300;
+  @apply focus-within:text-black dark:focus-within:text-white;
+}
+
+.focus-fieldset > label {
+  @apply font-serif;
+  @apply block;
+  @apply text-xl;
+  @apply pl-2;
+}
