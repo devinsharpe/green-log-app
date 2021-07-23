@@ -56,7 +56,7 @@ const Toast = () => {
       leaveTo="opacity-0 translate-y-16"
     >
       {currentMessage && (
-        <div className="fixed top-8 left-1/2 max-w-xs w-full p-4 transform -translate-x-1/2 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 shadow rounded font-serif dark:text-white">
+        <div className="fixed top-8 left-1/2 w-72 p-4 transform -translate-x-1/2 bg-white dark:bg-gray-900 border border-gray-700 dark:border-gray-300 shadow rounded font-serif dark:text-white">
           {(currentMessage.dismissable ||
             currentMessage.dismissable === undefined) && (
             <button
