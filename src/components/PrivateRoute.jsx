@@ -25,8 +25,9 @@ const PrivateRoute = ({ children, ...rest }) => {
             },
           }
         );
-        let data = await res.json();
+        let data;
         if (res.ok) {
+          data = await res.json();
           setUser({
             ...data.user,
             token: localStorage.getItem("greenlog-token"),
@@ -34,6 +35,10 @@ const PrivateRoute = ({ children, ...rest }) => {
           setAccount(data.account);
           setIsAuthenticated(Boolean(data.user));
           setIsAccounted(Boolean(data.account));
+          setIsLoading(false);
+        } else {
+          setIsAccounted(Boolean(account));
+          setIsAuthenticated(Boolean(user));
           setIsLoading(false);
         }
       } catch (err) {
@@ -86,38 +91,6 @@ const PrivateRoute = ({ children, ...rest }) => {
       />
     );
   }
-
-  // if (user !== null && account === null) {
-  //   return (
-  //     <Route
-  //       {...rest}
-  //       render={({ location }) => (
-  //         <Redirect
-  //           to={{
-  //             pathname: "/createaccount",
-  //             state: { from: location },
-  //           }}
-  //         />
-  //       )}
-  //     />
-  //   );
-  // } else if (user === null) {
-  //   return (
-  //     <Route
-  //       {...rest}
-  //       render={({ location }) => (
-  //         <Redirect
-  //           to={{
-  //             pathname: "/signin",
-  //             state: { from: location },
-  //           }}
-  //         />
-  //       )}
-  //     />
-  //   );
-  // } else {
-  //   return <Route {...rest} render={({}) => children} />;
-  // }
 };
 
 export default PrivateRoute;
