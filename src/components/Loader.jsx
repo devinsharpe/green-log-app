@@ -7,7 +7,7 @@ const Loader = () => {
       height="17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="animate-spin"
+      className="animate-spin text-gray-700 dark:text-white"
     >
       <path
         fillRule="evenodd"
