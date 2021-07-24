@@ -7,6 +7,7 @@ import Toast from "./components/Toast";
 
 import CreateAccount from "./pages/auth/CreateAccount";
 import Home from "./pages/Home";
+import Plants from "./pages/Plants";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 
@@ -26,6 +27,9 @@ function App() {
           <Route path="/createaccount">
             <CreateAccount />
           </Route>
+          <PrivateRoute path="/plants">
+            <Plants />
+          </PrivateRoute>
           <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
